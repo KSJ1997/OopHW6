@@ -1,3 +1,4 @@
+Взят реализованный код в рамках семинара OopHW3 https://github.com/KSJ1997/OopHW3.git
 Внесенные изменения в код включают:
 - Создание интерфейсов Comparable, MenuDisplay, Sortable и BeverageProvider.
 - Перемещение классов CoffeeType и TeaType в отдельные файлы.

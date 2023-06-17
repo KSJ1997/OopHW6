@@ -1,7 +1,6 @@
-//  * Класс BeverageProviderImpl реализует интерфейс BeverageProvider и предоставляет список напитков.
-//  * Он выполняет только одну ответственность - предоставление списка напитков.
-//  * Применяется принцип SRP (Single Responsibility Principle) и принцип инверсии зависимостей,
-//  * так как класс зависит от абстракции (интерфейса BeverageProvider) и не зависит от конкретной реализации MenuDisplay.
+// Класс BeverageProviderImpl реализует интерфейс BeverageProvider и предоставляет список напитков.
+// Применяется принцип SRP (Single Responsibility Principle) и принцип инверсии зависимостей,
+// так как класс зависит от абстракции (интерфейса BeverageProvider) и не зависит от конкретной реализации MenuDisplay.
 
 package src.main.vendingmachine.providers;
 

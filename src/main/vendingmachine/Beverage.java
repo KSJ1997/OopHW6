@@ -1,4 +1,3 @@
-// Это позволит классу Beverage быть ответственным только за свою основную функциональность
 // Принцип SOLID, примененный в этом классе, это Open/Closed Principle (OCP). 
 // Класс Beverage является абстрактным и реализует интерфейс Comparable<Beverage>. 
 package src.main.vendingmachine;

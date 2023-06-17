@@ -1,3 +1,4 @@
+// Добавлен метод getPrice() для получения цены напитка
 package src.main.vendingmachine;
 
 public enum CoffeeType {
@@ -21,6 +22,3 @@ public enum CoffeeType {
         return price;
     }
 }
-
-// Класс CoffeeType выделен в отдельный файл CoffeeType.java
-// Добавлен метод getPrice() для получения цены напитка

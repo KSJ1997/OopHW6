@@ -1,3 +1,7 @@
+//  * Класс Main является точкой входа в программу.
+//  * Он создает меню напитков, обрабатывает ввод пользователя и отображает выбранный напиток.
+//  * В данном проекте используется пул потоков ExecutorService для асинхронного чтения ввода пользователя.
+//  * Применяется принцип OCP (Open-Closed Principle), так как класс готов к расширению (например, добавлению новых напитков).
 package src;
 
 import java.io.BufferedReader;
@@ -10,15 +14,16 @@ import java.util.concurrent.Executors;
 import java.util.concurrent.TimeUnit;
 
 import src.main.vendingmachine.Beverage;
-import src.main.vendingmachine.Coffee;
-import src.main.vendingmachine.Tea;
-import src.main.vendingmachine.CoffeeType;
-import src.main.vendingmachine.TeaType;
+
+import src.main.vendingmachine.providers.BeverageProviderImpl;
+import src.main.vendingmachine.providers.BeverageProvider;
 import src.main.vendingmachine.interfaces.MenuDisplay;
+import src.main.vendingmachine.interfaces.MenuDisplayImpl;
 
 public class Main {
     public static void main(String[] args) {
-        List<Beverage> menu = createMenu();
+        BeverageProvider beverageProvider = new BeverageProviderImpl();
+        List<Beverage> menu = beverageProvider.getBeverages();
         BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
         ExecutorService executorService = Executors.newSingleThreadExecutor();
 
@@ -74,29 +79,15 @@ public class Main {
             }
         }
     }
-
+    
     private static List<Beverage> createMenu() {
+        BeverageProvider beverageProvider = new BeverageProviderImpl();
         List<Beverage> menu = new ArrayList<>();
 
-        menu.add(new Tea(TeaType.BLACK_TEA));
-        menu.add(new Tea(TeaType.GREEN_TEA));
-
-        menu.add(new Coffee(CoffeeType.AMERICANO));
-        menu.add(new Coffee(CoffeeType.CAPPUCCINO));
-        menu.add(new Coffee(CoffeeType.LATTE));
+        // Добавление напитков через BeverageProvider
+        menu.addAll(beverageProvider.getAllBeverages());
 
         return menu;
     }
 }
-
-class MenuDisplayImpl implements MenuDisplay {
-    @Override
-    public void displayMenu(List<Beverage> menu) {
-        System.out.println("Меню напитков:");
-        for (int i = 0; i < menu.size(); i++) {
-            Beverage beverage = menu.get(i);
-            System.out.println((i + 1) + ". " + beverage.getName() + " Цена: " + beverage.getPrice() + "р.");
-        }
-        System.out.println();
-    }
-}
+ 

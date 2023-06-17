@@ -1,3 +1,7 @@
+// Класс Tea представляет собой напиток "чай" и наследуется от абстрактного класса Beverage.
+// Он имеет свой собственный тип чая (TeaType) и вычисляет цену на основе выбранного типа.
+// Применяется принцип LSP (Liskov Substitution Principle), так как Tea является подтипом Beverage 
+// и может использоваться везде, где ожидается Beverage.
 package src.main.vendingmachine;
 
 public class Tea extends Beverage {
@@ -10,7 +14,7 @@ public class Tea extends Beverage {
         super("", 0);
         this.type = type;
         this.name = type.getName();
-        this.price = calculatePrice();
+        this.price = calculatePrice(); // Вычисление цены чая
     }
 
     private long calculatePrice() {
@@ -32,5 +36,3 @@ public class Tea extends Beverage {
         return this.name;
     }
 }
-
-// Класс Tea выделен в отдельный файл Tea.java

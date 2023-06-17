@@ -1,8 +1,6 @@
+// Этот интерфейс будет реализовываться только классами, поддерживающими сортировку
 package src.main.vendingmachine.interfaces;
 
 public interface Sortable {
-    void sortByPrice();
+    void sortByPrice(); // Метод для сортировки по цене
 }
-
-// Интерфейс Sortable вынесен в отдельный файл Sortable.java
-// Этот интерфейс будет реализовываться только классами, поддерживающими сортировку

@@ -1,3 +1,4 @@
+// Добавлен метод getPrice() для получения цены напитка
 package src.main.vendingmachine;
 
 public enum TeaType {
@@ -20,6 +21,3 @@ public enum TeaType {
         return price;
     }
 }
-
-// Класс TeaType выделен в отдельный файл TeaType.java
-// Добавлен метод getPrice() для получения цены напитка
